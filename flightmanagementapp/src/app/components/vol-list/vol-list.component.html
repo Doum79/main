@@ -1,0 +1,50 @@
+
+<div class="container mt-4">
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Filter" [(ngModel)]="filterTerm" (ngModelChange)="applyFilter($event)">
+    </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFlightModal">
+      Ajout de vol
+    </button>
+    
+    <div class="modal fade" id="addFlightModal" tabindex="-1" aria-labelledby="addFlightModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addFlightModalLabel">Ajouter un nouveau vol</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <app-add-vol (flightAdded)="addFlightToList($event)"></app-add-vol> 
+          </div>   
+        </div>
+      </div>
+    </div>
+  
+      
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Numero Vol</th>
+          <th scope="col">Numero pilote</th>
+          <th scope="col">Numero Avion</th>
+          <th scope="col">Ville de Depart</th>
+          <th scope="col">Ville d'arriver</th>
+          <th scope="col">Heure de Depart</th>
+          <th scope="col">Heure d'arriver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of filteredFlights ">
+          <td>{{ flight.numvol }}</td>
+          <td>{{ flight.numpilote }}</td>
+          <td>{{ flight.numavion }}</td>
+          <td>{{ flight.villedep}}</td>
+          <td>{{ flight.villearr}}</td>
+          <td>{{ flight.heuredep}}</td>
+          <td>{{ flight.heurearr}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

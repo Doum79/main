@@ -1,0 +1,31 @@
+
+ <div class="mb-3">
+    <label for="numvol" class="form-label">Numero du vol</label>
+    <input type="text" class="form-control" id="numvol" [(ngModel)]="newFlight.numvol" required>
+  </div>
+  <div class="mb-3">
+    <label for="numpilote" class="form-label">Numero du pilote</label>
+    <input type="number" class="form-control" id="numpilote" [(ngModel)]="newFlight.numpilote" required>
+  </div>
+  <div class="mb-3">
+    <label for="numavion" class="form-label">numero de l'avion</label>
+    <input type="number" class="form-control" id="numavion" [(ngModel)]="newFlight.numavion" required>
+  </div>
+  <div class="mb-3">
+    <label for="villedep" class="form-label">Ville de depart</label>
+    <input type="text" class="form-control" id="villedep" [(ngModel)]="newFlight.villedep" required>
+  </div>
+  <div class="mb-3">
+    <label for="villearr" class="form-label">Ville d' arriver</label>
+    <input type="text" class="form-control" id="villearr" [(ngModel)]="newFlight.villearr" required>
+  </div>
+  <div class="mb-3">
+    <label for="heuredep" class="form-label">Heure de depart</label>
+    <input type="text" class="form-control" id="heuredep" [(ngModel)]="newFlight.heuredep" required>
+  </div>
+ <div class="mb-3">
+    <label for="heurearr" class="form-label">Heure d'arriver</label>
+    <input type="text" class="form-control" id="heurearr" [(ngModel)]="newFlight.heurearr" required>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="addFlight()">Add Flight</button>
