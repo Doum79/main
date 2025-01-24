@@ -23,7 +23,7 @@ namespace FightManagements.Infrastructure.Repositories
         {
             return await _context.Vol.Include(f => f.Pilotes)
                                      .Include(f => f.Avions)
-                                     .AsNoTracking()
+                                     .AsSplitQuery()
                                      .ToListAsync();
                             }
         public async Task AddFlightAsync(Vol vols)
