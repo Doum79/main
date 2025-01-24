@@ -21,7 +21,9 @@ namespace FightManagements.Infrastructure.Repositories
 
         public async Task<IEnumerable<Avion>> GetAllAircraftAsync()
         {
-            return await _context.Avion.ToListAsync();
+            return await _context.Avion
+                                .AsNoTracking()
+                                .ToListAsync();
         }
     }
 }

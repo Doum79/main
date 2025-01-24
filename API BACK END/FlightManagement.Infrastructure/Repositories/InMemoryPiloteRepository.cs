@@ -20,7 +20,9 @@ namespace FightManagements.Infrastructure.Repositories
         }
        public async Task<IEnumerable<Pilote>> GetAllPilotsAsync()
         {
-            return await _context.Pilote.ToListAsync();
+            return await _context.Pilote
+                                 .AsNoTracking()
+                                 .ToListAsync();
         }
     }
 }
