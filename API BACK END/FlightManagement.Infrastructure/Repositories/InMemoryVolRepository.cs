@@ -21,8 +21,11 @@ namespace FightManagements.Infrastructure.Repositories
 
         public async Task<IEnumerable<Vol>> GetAllFlightsAsync()
         {
-            return await _context.Vol.Include(f => f.Pilotes).Include(f => f.Avions).ToListAsync();
-        }
+            return await _context.Vol.Include(f => f.Pilotes)
+                                     .Include(f => f.Avions)
+                                     .AsNoTracking()
+                                     .ToListAsync();
+                            }
         public async Task AddFlightAsync(Vol vols)
         {
             await _context.Vol.AddAsync(vols);
